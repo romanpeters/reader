@@ -17,7 +17,8 @@ def encode_url(text):
 
 def decode_url(url_path):
     text = base64.urlsafe_b64decode(f'{url_path}===').decode('utf-8')
-    return markdown.markdown(text)
+    sanitized_text = text.replace('&', '&amp;').replace('>', '&gt;').replace('<', '&lt;')
+    return markdown.markdown(sanitized_text)
 
 
 @app.route("/<string:url_path>", methods=['GET'])
@@ -33,7 +34,7 @@ def read_text(url_path):
     else:
         session.close()
         try:
-            title = None
+            title = "Reader"
             html = decode_url(url_path)
         except Exception as e:
             print(e)
@@ -46,7 +47,7 @@ def writer():
     if not text:
         return render_template('writer.html')
     url_path = encode_url(text)
-    return render_template('writer.html', url=f"{request.host_url}{url_path}")
+    return render_template('writer.html', url=f"https://reader.romanpeters.nl/{url_path}")
 
 
 
