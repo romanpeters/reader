@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styles.css') }}">
+</head>
+
+<body>
+<main>
+    <section>
+        <h1>Writer</h1>
+    </section>
+
+    <div class="form-style">
+        <form method="POST">
+            <textarea rows="5" cols="60" name="text" placeholder="Enter text"></textarea>
+                <br/>
+            <input type="submit" value="print"/>
+        </form>
+    </div>
+
+    <section class="result">
+        <p>{{ url }}</p>
+    </section>
+
+</main>
+</body>
+</html>
