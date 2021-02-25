@@ -56,7 +56,7 @@ def add_to_db(path: str):
     text_hash: str = generate_hash(path)
     file_name: str = os.path.basename(path)
     html = markdown.markdown(text)
-    title: str = BeautifulSoup(html, features='html.parser').get_text().split('\n')[0]  # wow...
+    title: str = BeautifulSoup(html, features='html.parser').get_text().lower().split('\n')[0]  # wow...
     url_path: str = urllib.parse.quote(title.replace(' ', '-')[:30])
     date_created = datetime.datetime.fromtimestamp(pathlib.Path(path).stat().st_ctime)
     date_modified = datetime.datetime.fromtimestamp(pathlib.Path(path).stat().st_mtime)
