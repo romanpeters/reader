@@ -1,0 +1,6 @@
+.idea/
+app/texts/*
+app/__pycache__/*
+!app/texts/helloworld.md
+sqlite.db
+venv/
