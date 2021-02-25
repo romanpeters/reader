@@ -40,15 +40,13 @@ def read_text(url_path):
             return render_template("404.html")
     return render_template('reader.html', title=title, html=html)
 
-@app.route("/writer", methods=['GET', 'POST'])
+@app.route("/writer", methods=['GET'])
 def writer():
-    if request.method == 'POST':
-        text = request.form['text']
-        if text:
-            url_path = encode_url(text)
-            print(url_path)
-            return render_template('writer.html', url=f"{request.host_url}{url_path}")
-    return render_template("writer.html")
+    text = request.args.get('text')
+    if not text:
+        return render_template('writer.html')
+    url_path = encode_url(text)
+    return render_template('writer.html', url=f"{request.host_url}{url_path}")
 
 
 

@@ -22,6 +22,13 @@ h2 { font-size: 4vw; letter-spacing: 3px; }
 
 h2 { font-size: 2vw; letter-spacing: 2px; }
 
+.result {
+    font-size: 4vw; letter-spacing: 3px;
+    text-align: center;
+    line-height: 1.25;
+    margin-left: 3vw;
+    margin-right: 3vw;}
+
 h1 a,
 
 h1 a:visited { color: #333333 }
