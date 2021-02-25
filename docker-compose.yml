@@ -4,8 +4,10 @@ services:
      image: reader:latest
      container_name: reader
      restart: always
-#     volumes:
-#       - ./app:/app
+     volumes:
+       - ./texts:/app/app/texts
+     ports:
+       - 2356:5000
 #     networks:
 #       - traefik_proxy
 #     labels:
