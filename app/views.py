@@ -13,7 +13,7 @@ def index():
 
 def encode_url(text):
     url_path = base64.urlsafe_b64encode(bytes(text, 'utf-8')).decode('utf-8')
-    return url_path
+    return url_path.replace('=', '')
 
 def decode_url(url_path):
     text = base64.urlsafe_b64decode(f'{url_path}===').decode('utf-8')
