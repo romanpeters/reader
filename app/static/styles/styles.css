@@ -16,6 +16,15 @@ h1, h2, h3 { font-family: 'Enriqueta', arial, serif;
     margin-right: 3vw;
 }
 
+ol { font-family: 'Enriqueta', arial, serif;
+    font-size: 1vw;
+    font-weight: 300;
+    line-height: 2vw;
+    margin-top: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
 h1 { font-size: 6vw; letter-spacing: 5px; margin-top: 10%; font-weight: bold; }
 
 h2 { font-size: 4vw; letter-spacing: 3px; }
